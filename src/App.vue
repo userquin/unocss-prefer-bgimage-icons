@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const checked = ref(true)
+const checked = ref(typeof window.XCapiApp !== 'undefined' ? window.XCapiApp.preferBgImageIcons(): true)
 </script>
 
 <template>
