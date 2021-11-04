@@ -10,6 +10,9 @@ export default defineConfig({
   server: {
     host: true,
   },
+  build: {
+    manifest: true,
+  },
   plugins: [
       vue(),
       UnoCss({

@@ -15,7 +15,7 @@ const checked = ref(typeof window.XCapiApp !== 'undefined' ? window.XCapiApp.pre
         <input text-2xl id="switch" type="checkbox" v-model="checked" />
       </div>
 
-      <div ma c-purple-500 grid grid-auto-flow-col grid-gap-x-2 :prefer-gb-image-icons="checked ? true : null">
+      <div ma c-purple-500 :prefer-gb-image-icons="checked ? true : null">
         <div class="i-mdi-account" text-2xl />
         <div class="i-mdi-account-alert" text-2xl />
         <div class="i-mdi-account-alert-outline" text-2xl />
