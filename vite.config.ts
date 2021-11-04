@@ -7,6 +7,9 @@ import Icons from '@unocss/preset-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: true,
+  },
   plugins: [
       vue(),
       UnoCss({
