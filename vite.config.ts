@@ -25,7 +25,7 @@ export default defineConfig({
                 warn: true
             }),
             presetAttributify(),
-            presetUno(),
+            presetUno({ dev: true }),
         ]
       })
   ]

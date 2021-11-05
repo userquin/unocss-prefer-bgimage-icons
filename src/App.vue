@@ -10,7 +10,7 @@ const checked = ref(typeof window.XCapiApp !== 'undefined' ? window.XCapiApp.pre
         unocss
       </div>
 
-      <div m-b4>
+      <div class="?" m-b4>
         <label for="switch">Switch to</label>
         <input text-2xl id="switch" type="checkbox" v-model="checked" />
       </div>
