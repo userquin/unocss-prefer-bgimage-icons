@@ -16,7 +16,7 @@ const checked = ref(typeof window.XCapiApp !== 'undefined' ? window.XCapiApp.pre
         <input text-2xl id="switch" type="checkbox" v-model="checked" />
       </div>
 
-      <div ma c-purple-500 :prefer-gb-image-icons="checked ? true : null">
+      <div p-4 c-purple-500 :prefer-gb-image-icons="checked ? true : null">
         <div id="custom-icons-collection" />
       </div>
 
