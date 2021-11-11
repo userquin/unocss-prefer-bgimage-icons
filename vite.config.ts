@@ -31,17 +31,6 @@ const virtualIcons = (): Plugin => {
     return {
         name: 'custom-icons-collection',
         enforce: 'pre',
-        resolveId(id) {
-            if (id === 'virtual:custom-icons-collection')
-                return `${id.slice('virtual:'.length)}.js`
-        },
-        async load(id) {
-            console.log(id)
-            if (id === 'custom-icons-collection.js') {
-                await resolveIcons()
-                return `const icons = [${icons.join(', ')}];\nexport default icons;`
-            }
-        },
         async transform(code, id) {
             if (id.endsWith('src/App.vue')) {
                 await resolveIcons()
