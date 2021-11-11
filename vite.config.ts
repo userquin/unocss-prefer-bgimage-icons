@@ -36,7 +36,7 @@ const virtualIcons = (): Plugin => {
                 await resolveIcons()
                 const index = code.indexOf('<div id="custom-icons-collection" />')
                 if (index > -1) {
-                    return `${code.slice(0, index)}${icons.slice(0, 1000).map(i => `<div text-2xl m-2 property-font-size-margin ease-in class="${i}" tabindex="0" focus:text-4xl hover="m-0 text-4xl cursor-pointer" />`).join('\n')}${code.slice(index + 36)}`
+                    return `${code.slice(0, index)}${icons.slice(0, 1000).map(i => `<div text-2xl m-2 property-font-size-margin ease-in class="${i}" tabindex="0" focus:text-4xl focus:m-0 hover="m-0 text-4xl cursor-pointer" />`).join('\n')}${code.slice(index + 36)}`
                 }
             }
             return code
