@@ -6,6 +6,7 @@ import { resolveModule } from 'local-pkg'
 import UnoCss from 'unocss/vite'
 import { presetUno, presetAttributify } from 'unocss'
 import Icons from '@unocss/preset-icons'
+import Inspect from 'vite-plugin-inspect'
 
 const collection = 'mdi'
 
@@ -36,7 +37,7 @@ const virtualIcons = (): Plugin => {
                 await resolveIcons()
                 const index = code.indexOf('<div id="custom-icons-collection" />')
                 if (index > -1) {
-                    return `${code.slice(0, index)}${icons.slice(0, 1000).map(i => `<div text-2xl m-2 property-font-size-margin ease-in class="${i}" tabindex="0" focus:text-4xl focus:m-0 hover="m-0 text-4xl cursor-pointer" />`).join('\n')}${code.slice(index + 36)}`
+                    return `${code.slice(0, index)}${icons.slice(0, 25).map(i => `<div text-2xl m-2 property-font-size-margin ease-in class="${i}" tabindex="0" focus:text-4xl focus:m-0 hover="m-0 text-4xl cursor-pointer" />`).join('\n')}${code.slice(index + 36)}`
                 }
             }
             return code
@@ -67,6 +68,11 @@ export default defineConfig({
             presetAttributify(),
             presetUno(),
         ]
+      }),
+      // https://github.com/antfu/vite-plugin-inspect
+      Inspect({
+          // change this to enable inspect for debugging
+          enabled: process.env.DEV,
       }),
   ]
 })
